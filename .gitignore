@@ -12,11 +12,8 @@
 *.cb2
 .*.lb
 
-<<<<<<< HEAD
 *.pdf
 
-=======
->>>>>>> e3fe340842f95917e435ed2b77596278ce3f6354
 ## Intermediate documents:
 *.dvi
 *.xdv
