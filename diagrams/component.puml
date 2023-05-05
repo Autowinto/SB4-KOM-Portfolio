@@ -1,0 +1,15 @@
+@startuml
+component Core
+component Common
+component Player
+component Enemy
+component Asteroid
+component Collision
+component Bullet
+
+Core ..> Common: uses
+Player ..> Common: uses
+Enemy ..> Common: uses
+Asteroid ..> Common: uses
+Bullet ..> Common: uses
+@enduml
