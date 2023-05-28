@@ -8,29 +8,28 @@ Furthermore, the different elements of the game and how they are connected must 
 
 \subsection{UML Diagrams}
 \subsubsection{Component}
-\begin{figure}
+\begin{figure}[H]
     \includegraphics[width=\textwidth]{images/diagrams/component.png}
     \caption{A UML Component diagram over the project}
 \end{figure}
 
 \subsubsection{Class}
-\begin{figure}
+\begin{figure}[H]
     \includegraphics[width=\textwidth]{images/diagrams/component.png}
     \caption{A UML Class diagram over the project}
 \end{figure}
 
 \subsubsection{Sequence}
-\begin{figure}
+\begin{figure}[H]
     \includegraphics[width=\textwidth]{images/diagrams/component.png}
     \caption{A UML Sequence diagram over the project}
 \end{figure}
 
 \subsection{Component Contracts}
 \subsubsection{IGamePluginService}
-TEST
 The IGamePluginService interface, is implemented by the plugins that are used to initialize entities handled by the different services.
 This interface has two operations. One for starting the plugin and one for stopping the plugin.
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
         \begin{tabulary}{1.0\textwidth}{lL}
             \toprule
@@ -38,7 +37,9 @@ This interface has two operations. One for starting the plugin and one for stopp
             \midrule
             Description:     & Initializes the components' entities  \\
             \midrule
-            Parameters:      & text                                  \\
+            Parameters:      & \begin{itemize}
+                \item GameData
+            \end{itemize}                                  \\
             \midrule
             Preconditions:   & text                                  \\
             \midrule
@@ -49,7 +50,7 @@ This interface has two operations. One for starting the plugin and one for stopp
     \caption{Component contract over the functions of the IEntityProcessingService interface.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
         \begin{tabulary}{1.0\textwidth}{lL}
             \toprule
@@ -71,7 +72,7 @@ This interface has two operations. One for starting the plugin and one for stopp
 \subsubsection{IEntityProcessingService}
 The IEntityProcessingService interface is implemented by components' services, so that they can process and handle game
 logic every frame.
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
         \begin{tabulary}{1.0\textwidth}{lL}
             \toprule
@@ -93,7 +94,7 @@ logic every frame.
 \subsubsection{IPostEntityProcessingService}
 The IEntityProcessingService interface is, like the IEntityProcessingService, implemented by components' services, so that they can process and handle game
 logic every frame. The IPostEntityService, however, always processes after each IEntityProcessingService has finished processing.
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
         \begin{tabulary}{1.0\textwidth}{lL}
             \toprule
@@ -114,7 +115,7 @@ logic every frame. The IPostEntityService, however, always processes after each 
 
 \subsubsection{IBulletFactory}
 The IBulletFactory is an interface implemented by classes that need implementation logic specifically for spawning bullets.
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
         \begin{tabulary}{1.0\textwidth}{lL}
             \toprule
@@ -134,8 +135,9 @@ The IBulletFactory is an interface implemented by classes that need implementati
 \end{figure}
 
 \subsubsection{EntityPart}
-The EntityPart is an interface implemented by the different parts that can be attached to an entity to extend the logic of said entity.
-\begin{figure}
+The EntityPart is an interface implemented by the different parts that can be 
+attached to an entity to extend the logic of said entity.
+\begin{figure}[H]
     \begin{center}
         \begin{tabulary}{1.0\textwidth}{lL}
             \toprule
