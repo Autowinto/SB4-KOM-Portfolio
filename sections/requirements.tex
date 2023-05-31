@@ -1,49 +1,20 @@
 \section{Requirements}
-The requirements specifications for this project, are based on the formal requirements of
-the lab exercises from the course and don't veer too far from 
+The requirements specifications for this project, are based on the formal requirements of the lab exercises from the course and don't veer too far from the assignment specification.
 
 \subsection{Functional Requirements}
-\begin{table}[H]
-    \begin{center}
-        \begin{tabulary}{1.0\textwidth}{l | L}
-            \toprule
-            F01 & The game must include a player component. \\
-            \midrule
-            F02 & The game must include an enemy component. \\
-            \midrule
-            F03 & The game must include an asteroid component. \\
-            \midrule
-            F04 & The game must include a weapon component. \\
-            \bottomrule
-        \end{tabulary}
-    \end{center}
-    \caption{Functional Requirements}
-    \label{tab:func_req}
-\end{table}
-
-As can be seen on \autoref{tab:func_req}
+The game must be a component- and data-oriented Asteroids game implemented using
+the LibGDX Java library. The game must be based on the provided
+AsteroidsEntityFramework project in the provided repository\footnote{https://github.com/sweat-tek/SB4-KOM}.
+The game must include the components Player, Enemy, Weapon and some sort of Map to play on. The Player, Enemy and
+Weapon components must all implement the provided interfaces from the
+aforementioned AsteroidsEntityFramework project. If a module is removed from the
+game, the game must still function properly, meaning that there must be no hard
+dependencies between the different modules and must be independent of eachother.
 
 \subsection{Non-Functional Requirements}
-\begin{table}[H]
-    \begin{center}
-        \begin{tabulary}{1.0\textwidth}{l | L}
-            \toprule
-            F01 & The game must include a player component. \\
-            \midrule
-            F02 & The game must include an enemy component. \\
-            \midrule
-            F03 & The game must include an asteroid component. \\
-            \midrule
-            F04 & The game must include a weapon component. \\
-            \bottomrule
-        \end{tabulary}
-    \end{center}
-    \caption{Functional Requirements}
-    \label{tab:nfunc_req}
-\end{table}
-\subsection{Interfaces}
-
-
-The Player, Enemy and Weapon components must implement service provided 
-interfaces that allow the components to be updated and removed without 
-recompilation.
+Whenever an asteroid is hit, either by another asteroid or by a player/enemy
+bullet, it must split into two smaller asteroids. If the asteroid in question is
+already a small asteroid, it should be removed from the world. Likewise with the
+enemy and player entites. If either are hit, they should be removed from the
+world. The player must be able to be moved around using the arrow keys and be
+able to shoot with the spacebar.

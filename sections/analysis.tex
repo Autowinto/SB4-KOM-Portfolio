@@ -1,5 +1,43 @@
 \section{Analysis}
-Analysis describes only *what* the system should do and not *how* it is done.
+In order to figure out how the game should function exactly, we need to define what the game and the different components in the game should do.
+
+\subsection{LibGDX}
+As per the formal definition of the assignment, the project makes use of the LibGDX library to handle the technical Game Engine side of things.
+LibGDX game loops
+
+\subsection{Maven}
+Maven is a dependency management system for Java. Using Maven, it is possible to automate download and install of dependencies on a per-component level as well as on a project as-a-whole level.
+
+\subsection{Module Systems}
+
+\subsubsection{ServiceLoader}
+The Java ServiceLoader is a Java class useful for loading classes implementing specific interfaces or "services", hence the name. The ServiceLoader can find all implementations of an interface and fetch the classes, allowing for instantiation without explicit import of a class. This is incredibly useful when building component-based software, as it allows us to have a shared set of interfaces, which components can implement. Said components can then be loaded into the core part of the software without any hard dependencies.
+
+\subsubsection{Java Module System}
+The Java Module System or JPMS Java's built-in module system since Java version 9. To use the Java Module System you simply have to add a module-info file to the root of the module with module definitions. TODO: Explain this module definition?
+
+\subsubsection{Spring}
+Java Spring is a dependency injection framework for Java
+
+
+\subsection{Components}
+To fulfill the requirements of the game, several components need to be developed.
+
+TODO: FOCUS ON WHAT AND NEVER HOW
+
+\subsubsection{Weapon}
+Both the Player and the Enemy component require some sort of weapon in order to be able to shoot. This needs to handle spawning some kind of bullet entity which will then be handled by a system that moves the bullet and handles collision between bullet and entity.
+
+\subsubsection{Player}
+Player
+
+\subsubsection{Enemy}
+Enemy
+
+\subsubsection{Map}
+Since the Asteroids game is relatively simple, there's no reason to have a particularly advanced map. Therefore, the Map component in this case isn't actually its own component. The map is represented by entities having coordinate positions and them being placed in the "map" by their coordinates.
+
+Bullet is my weapon
 
 \subsection{Rough Interfaces}
 In analysis, you can come up with a rough draft of the interfaces and the entities of the game.
