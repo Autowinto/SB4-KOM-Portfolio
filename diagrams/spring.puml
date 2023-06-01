@@ -1,0 +1,11 @@
+@startuml
+actor Player as player
+participant Main as main
+participant ModuleConfig as mconfig
+participant Game as game
+
+player -> main: Player starts the game.
+main -> mconfig: Application is scanned for beans and game bean is started.
+mconfig -> game: Game is passed the found services and begins processing them.
+
+@enduml

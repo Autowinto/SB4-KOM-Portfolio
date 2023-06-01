@@ -1,3 +1,11 @@
 @startuml
-    Test --> Test2
+participant Core as core
+participant IEntityProcessingService as ep
+participant IPostEntityProcessingService as eppost
+
+core -> ep: Calls the process function of IEntityProcessingServices
+ep -> core: Returns
+core -> eppost: Calls the process function of IPostEntityProcessingServices after IEntityProcessingServices finish
+eppost -> core: Returns
+
 @enduml

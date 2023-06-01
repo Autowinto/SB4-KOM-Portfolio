@@ -1,0 +1,59 @@
+@startuml
+' Interfaces
+object IEntityProcessingService
+IEntityProcessingService : process(GameData, World): void
+object IPostEntityProcessingService
+IPostEntityProcessingService : process(GameData, World): void
+object IBulletFactory
+IBulletFactory : create(GameData, World): Entity
+object IGamePlugin
+IGamePlugin : start(GameData, World): void
+IGamePlugin : stop(GameData, World): void
+
+' Components
+object Player
+Player : process(GameData, World): void
+Player : start(GameData, World): void
+Player : stop(GameData, World): void
+
+object Enemy
+Enemy : process(GameData, World): void
+Enemy : start(GameData, World): void
+Enemy : stop(GameData, World): void
+
+object Asteroid
+Asteroid : process(GameData, World): void
+Asteroid : start(GameData, World): void
+Asteroid : stop(GameData, World): void
+
+object Bullet
+Bullet : process(GameData, World): void
+Bullet : create(Entity, GameData): Entity
+Bullet : start(GameData, World): void
+Bullet : stop(GameData, World): void
+
+object Collision
+Collision : process(GameData, World): void
+Collision : start(GameData, World): void
+Collision : stop(GameData, World): void
+
+
+' Relationships
+Bullet --> IBulletFactory
+
+IGamePlugin <-- Bullet
+IGamePlugin <-- Asteroid
+IGamePlugin <-- Player
+IGamePlugin <-- Enemy
+IGamePlugin <-- Collision
+
+Bullet --> IEntityProcessingService
+Asteroid --> IEntityProcessingService
+Player --> IEntityProcessingService
+Enemy --> IEntityProcessingService
+
+Collision --> IPostEntityProcessingService
+
+
+
+@enduml
